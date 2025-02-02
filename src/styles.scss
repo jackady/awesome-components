@@ -5,7 +5,7 @@ html {
 
     @include mat.theme(
             (
-                color: mat.$green-palette,
+                color: mat.$azure-palette,
                 typography: Roboto
             )
     );
@@ -18,22 +18,13 @@ mat-toolbar {
 
     @include mat.toolbar-overrides((
         container-background-color: var(--mat-sys-primary),
-        container-text-color: var(--mat-sys-on-primary),
+        container-text-color: var(--mat-sys-on-primary)
     ));
 }
 
 body {
     height: 100%;
     margin: 0;
-    background: #24292e
-}
-
-a {
-    color: white;
-    text-decoration: none;
-    font-weight: normal;
-
-    &:hover {
-        text-decoration: underline;
-    }
+    background: #24292e;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
 }
