@@ -1,8 +1,8 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { environment } from "../../../environments/environment";
-import { CommentedPostEvent } from "../components/events/commented-post.event";
+import { environment } from "../../../../environments/environment";
+import { CommentedPostEvent } from "../events/commented-post.event";
 import { PostModel } from "../models/post.model";
 
 @Injectable({ providedIn: 'root' })

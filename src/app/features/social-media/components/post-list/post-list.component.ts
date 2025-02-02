@@ -3,9 +3,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Data } from "@angular/router";
 
 import { map, Observable } from "rxjs";
+import { CommentedPostEvent } from "../../events/commented-post.event";
 import { PostModel } from "../../models/post.model";
 import { PostsService } from "../../services/post.service";
-import { CommentedPostEvent } from "../events/commented-post.event";
 import { PostListItemComponent } from "../post-list-item/post-list-item.component";
 
 @Component({

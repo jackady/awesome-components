@@ -1,4 +1,4 @@
-import { CommentModel } from "../../shared/models/comment.model";
+import { CommentModel } from "../../../shared/models/comment.model";
 
 export interface PostModel {
     id: number;

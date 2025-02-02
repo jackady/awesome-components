@@ -8,12 +8,12 @@ import {
     MatCardSubtitle,
     MatCardTitle
 } from "@angular/material/card";
-import { CommentsComponent } from "../../../shared/components/comment/comment.component";
-import { HighlightDirective } from "../../../shared/directives/highlight.directive";
-import { ShortenPipe } from "../../../shared/pipes/shorten.pipe";
-import { TimeAgoPipe } from "../../../shared/pipes/time-ago.pipe";
+import { CommentsComponent } from "../../../../shared/components/comment/comment.component";
+import { HighlightDirective } from "../../../../shared/directives/highlight.directive";
+import { ShortenPipe } from "../../../../shared/pipes/shorten.pipe";
+import { TimeAgoPipe } from "../../../../shared/pipes/time-ago.pipe";
+import { CommentedPostEvent } from "../../events/commented-post.event";
 import { PostModel } from "../../models/post.model";
-import { CommentedPostEvent } from "../events/commented-post.event";
 
 @Component({
     selector: 'app-post-list-item',
