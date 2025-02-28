@@ -1,0 +1,16 @@
+<mat-card class="form-card" [formGroup]="formSection.group">
+    <mat-card-header>
+        <mat-card-subtitle>{{ formSection.title }}</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+        <div *ngFor="let row of formSection.rows">
+            <app-form-row-confirm *ngIf="isFormRowConfirm(row)"
+                                  [formSection]="formSection"
+                                  [formRowConfirm]="castInFormRowConfirm(row)"/>
+
+            <app-form-row-inputs *ngIf="!isFormRowConfirm(row)"
+                                 [formRowInputs]="castInFormRowInputs(row)"/>
+        </div>
+    </mat-card-content>
+</mat-card>

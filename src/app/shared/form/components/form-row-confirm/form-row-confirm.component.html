@@ -1,0 +1,8 @@
+<div class="form-row">
+    <app-form-input [input]="formRowConfirm.base"/>
+    <app-form-input [input]="formRowConfirm.confirm"/>
+</div>
+
+<div class="form-row" *ngIf="showConfirmError$ | async">
+    <span class="error-text">Les deux champs ne correspondent pas</span>
+</div>

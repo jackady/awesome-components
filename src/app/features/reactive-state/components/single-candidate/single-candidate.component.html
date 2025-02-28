@@ -1,0 +1,23 @@
+<mat-card>
+    <mat-card-content class="employee-info" *ngIf="candidate$ | async as candidate">
+        <img [src]="candidate.imageUrl" [alt]="candidate.firstName + ' ' + candidate.lastName">
+
+        <mat-card-title-group>
+            <mat-card-title>{{ candidate.firstName }} {{ candidate.lastName }}</mat-card-title>
+            <mat-card-subtitle>{{ candidate.job }}, {{ candidate.department }}chez {{ candidate.company }}
+            </mat-card-subtitle>
+        </mat-card-title-group>
+
+        <p>Contact : {{ candidate.email }}</p>
+    </mat-card-content>
+
+    <mat-card-actions>
+        <mat-spinner *ngIf="loading$ | async; else buttons"></mat-spinner>
+
+        <ng-template #buttons>
+            <button mat-flat-button (click)="onHire()">EMBAUCHER</button>
+            <button mat-flat-button (click)="onRefuse()">REFUSER</button>
+            <button mat-flat-button (click)="onGoBack()">RETOUR</button>
+        </ng-template>
+    </mat-card-actions>
+</mat-card>

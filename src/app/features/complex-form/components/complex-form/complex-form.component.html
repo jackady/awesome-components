@@ -1,0 +1,37 @@
+<mat-card [formGroup]="complexForm.group" class="main-form">
+    <mat-card-header>
+        <mat-card-title>{{ complexForm.title }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <app-form-section [formSection]="complexForm.sections['name']"/>
+
+        <mat-card class="form-card">
+            <mat-card-header>
+                <mat-card-subtitle>{{ complexForm.sections['contact'].title }}</mat-card-subtitle>
+            </mat-card-header>
+
+            <mat-card-content>
+                <div class="form-row">
+                    <mat-radio-group [formControl]="contactPreference">
+                        <mat-radio-button value="{{ contactValues.EMAIL.value }}">
+                            {{ contactValues.EMAIL.label }}
+                        </mat-radio-button>
+                        <mat-radio-button value="{{ contactValues.PHONE.value }}">
+                            {{ contactValues.PHONE.label }}
+                        </mat-radio-button>
+                    </mat-radio-group>
+                </div>
+            </mat-card-content>
+        </mat-card>
+
+        <app-form-section *ngIf="showEmailSection$ | async" [formSection]="complexForm.sections['email']"/>
+        <app-form-section *ngIf="showPhoneSection$ | async" [formSection]="complexForm.sections['phone']"/>
+        <app-form-section [formSection]="complexForm.sections['login']"/>
+    </mat-card-content>
+
+    <mat-card-actions *ngIf="complexForm.group.valid">
+        <button mat-flat-button color="primary" (click)="onClick()" [disabled]="loading">ENREGISTRER</button>
+    </mat-card-actions>
+
+    <mat-spinner *ngIf="loading" color="primary" mode="indeterminate"></mat-spinner>
+</mat-card>

@@ -1,0 +1,26 @@
+mat-card {
+    text-align: center;
+    width: 50%;
+}
+
+mat-card, mat-card-content, mat-card-actions {
+    margin: 20px auto;
+}
+
+img {
+    border-radius: 50% 50%;
+}
+
+button .hire {
+    color: orange;
+    background-color: orange;
+}
+
+button .refuse {
+    color: red;
+    background-color: red;
+}
+
+button {
+    margin: 5px;
+}
